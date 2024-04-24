@@ -14,6 +14,7 @@ public class Main {
     }
 
     // space complexity of this method is O(n)
+    // basically this method for just understanding the recursion printing the number till 4 included
     private static void printNumbers(int n) {
         // Base condition for this recursion call
         if (n == 5) return;
