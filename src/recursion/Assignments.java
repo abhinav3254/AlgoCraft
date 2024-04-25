@@ -9,7 +9,7 @@ public class Assignments {
     }
 
 
-    // question 1 solved
+    // question 1 solved using recursion
     // link to problem :- https://www.geeksforgeeks.org/sum-triangle-from-array/
     private static void sumOfTriangles2(int[] arr,int end) {
         if (arr.length == 0) return;
