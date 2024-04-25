@@ -18,6 +18,7 @@ public class BinarySearch {
                 // shift end to left side
                 end = mid - 1;
             } else {
+                // shift start to mid + 1
                 start = mid + 1;
             }
         }
