@@ -10,6 +10,8 @@ public class LevelOneQuestions {
         System.out.println();
         System.out.println(factorial(5));
         System.out.println(sumOfNTo1(5));
+
+        System.out.println("sum of numbers are :- "+sumOfNumbers(12345));
     }
 
     // print numbers from n......1
@@ -38,5 +40,11 @@ public class LevelOneQuestions {
     private static int sumOfNTo1(int n) {
         if (n == 1) return 1;
         return n+ sumOfNTo1(n-1);
+    }
+
+    // method from sum of numbers 1234 = 1 + 2 + 3 + 4 = 10
+    private static int sumOfNumbers(int n) {
+        if (n<10) return n;
+        return n%10 + sumOfNumbers(n/10);
     }
 }
