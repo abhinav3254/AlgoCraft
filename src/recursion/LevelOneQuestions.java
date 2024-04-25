@@ -9,6 +9,7 @@ public class LevelOneQuestions {
         print1ToN(5);
         System.out.println();
         System.out.println(factorial(5));
+        System.out.println(sumOfNTo1(5));
     }
 
     // print numbers from n......1
@@ -30,5 +31,12 @@ public class LevelOneQuestions {
     private static int factorial(int n) {
         if (n == 1) return 1;
         return n*factorial(n-1);
+    }
+
+
+    // sum of number from n to 1
+    private static int sumOfNTo1(int n) {
+        if (n == 1) return 1;
+        return n+ sumOfNTo1(n-1);
     }
 }
