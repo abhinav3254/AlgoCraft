@@ -20,4 +20,8 @@ public class Assignments {
         }
         sumOfTriangles2(temp,end-1);
     }
+
+
+    // To solve using iteration is pending... once I will be back I will solve this one
+    private static void sumOfTrianglesIteration() {}
 }
