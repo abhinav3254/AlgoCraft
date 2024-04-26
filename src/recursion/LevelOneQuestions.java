@@ -16,6 +16,8 @@ public class LevelOneQuestions {
         System.out.println("number reverse is :- "+reverseNumber(12345,0));
 
         System.out.println("reverse using iteration :- "+reverseNumberIteration(12345));
+
+        System.out.println("number of zeros :- "+countZero(10000000,0));
     }
 
     // print numbers from n......1
@@ -68,5 +70,13 @@ public class LevelOneQuestions {
             n /= 10;
         }
         return m;
+    }
+
+    // count number of zeros in a number
+    private static int countZero (int n,int count) {
+        if (n<10 && n>0) return count;
+        else if (n == 0) return count + 1;
+        if (n%10 == 0) count = count + 1;
+        return countZero(n/10,count);
     }
 }
