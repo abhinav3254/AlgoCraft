@@ -18,6 +18,7 @@ public class LevelTwo {
         int[] newArray = {1,2,3,4,5,4,6};
         List<Integer> list = new ArrayList<>();
         System.out.println(findElementsAtMultipleIndex(newArray,0,list,4));
+        System.out.println(findElementsAtMultipleIndex2(newArray,0,4));
     }
 
 
@@ -70,5 +71,16 @@ public class LevelTwo {
         if (arr.length == index) return list;
         if (arr[index] == target) list.add(index);
         return findElementsAtMultipleIndex(arr, index+1, list, target);
+    }
+
+
+    // In this approach we are creating a new list in each call....
+    private static List<Integer> findElementsAtMultipleIndex2(int[] arr,int index,int target) {
+        List<Integer> list = new ArrayList<>();
+        if (arr.length == index) return list;
+        if (arr[index] == target) list.add(index);
+        List<Integer> ansFromBelowCalls = findElementsAtMultipleIndex2(arr,index+1,target);
+        list.addAll(ansFromBelowCalls);
+        return list;
     }
 }
