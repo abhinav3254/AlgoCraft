@@ -1,6 +1,10 @@
 package recursion;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 // This will contain all the Level Two Questions
 public class LevelTwo {
     public static void main(String[] args) {
@@ -10,6 +14,11 @@ public class LevelTwo {
         System.out.println(sorted(arr,0));
         System.out.println("linear search :- "+linearSearch(arr,14,0));
         System.out.println("linear search index :- "+linearSearchFindIndex(arr,4,0));
+
+        int[] newArray = {1,2,3,4,5,4,6};
+        List<Integer> list = new ArrayList<>();
+        list = findElementsAtMultipleIndex(newArray,0,list,4);
+        for (int i:list) System.out.print(i+" ");
     }
 
 
@@ -54,5 +63,13 @@ public class LevelTwo {
         if (arr.length == index) return -1;
         if (arr[index] == target) return index;
         return linearSearchFindIndex(arr,target,index+1);
+    }
+
+
+    // if more than one target is there then we return list of integers which have their index
+    private static List<Integer> findElementsAtMultipleIndex(int[] arr,int index,List<Integer> list,int target) {
+        if (arr.length == index) return list;
+        if (arr[index] == target) list.add(index);
+        return findElementsAtMultipleIndex(arr, index+1, list, target);
     }
 }
