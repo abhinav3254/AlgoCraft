@@ -8,6 +8,8 @@ public class LevelTwo {
         System.out.println(checkArrayIsSortedOrNotIteration(arr));
         System.out.println(checkIsArraySorted(arr,0));
         System.out.println(sorted(arr,0));
+        System.out.println("linear search :- "+linearSearch(arr,14,0));
+        System.out.println("linear search index :- "+linearSearchFindIndex(arr,4,0));
     }
 
 
@@ -36,5 +38,21 @@ public class LevelTwo {
     private static boolean sorted(int[] arr,int index) {
         if (arr.length-1 == index) return true;
         return arr[index]<arr[index+1] && sorted(arr,index+1);
+    }
+
+
+    // linear search using recursion
+    private static boolean linearSearch(int[] arr,int target,int index) {
+        if (arr.length == index) return false;
+        if (arr[index] == target) return true;
+        return linearSearch(arr,target,index+1);
+    }
+
+
+    // this method will return the index number at which element found if not found then return -1
+    private static int linearSearchFindIndex(int[] arr,int target,int index) {
+        if (arr.length == index) return -1;
+        if (arr[index] == target) return index;
+        return linearSearchFindIndex(arr,target,index+1);
     }
 }
