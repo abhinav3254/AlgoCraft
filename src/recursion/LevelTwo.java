@@ -17,8 +17,7 @@ public class LevelTwo {
 
         int[] newArray = {1,2,3,4,5,4,6};
         List<Integer> list = new ArrayList<>();
-        list = findElementsAtMultipleIndex(newArray,0,list,4);
-        for (int i:list) System.out.print(i+" ");
+        System.out.println(findElementsAtMultipleIndex(newArray,0,list,4));
     }
 
 
