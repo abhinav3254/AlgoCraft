@@ -6,6 +6,8 @@ public class Main {
         System.out.println(removeAFromStringRecursion("baccad","",0));
         System.out.println(removeAFromStringRecursionInBody("dadabaccad",0));
         System.out.println(removeAFromStringRecursionUsingSubstring("abhinav",""));
+
+        System.out.println("remove apple :- "+skipApple("abcdappleefa",""));
     }
 
 
@@ -43,5 +45,19 @@ public class Main {
         if (str.isEmpty() || str.isBlank()) return newString;
         if (str.charAt(0) != 'A' && str.charAt(0) != 'a') newString = newString + str.charAt(0);
         return removeAFromStringRecursionUsingSubstring(str.substring(1),newString);
+    }
+
+
+    // skipping apple from the string
+    private static String skipApple(String str,String newString) {
+        if (str.isBlank() || str.isEmpty()) return newString;
+        // the current index where we are starting from there we are checking everytime if from the current index does the
+        // string have apple in it... if yes then remove that string
+        if (str.startsWith("apple")) {
+            return skipApple(str.substring(5),newString);
+        } else {
+            newString = newString+str.charAt(0);
+            return skipApple(str.substring(1),newString);
+        }
     }
 }
