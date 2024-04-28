@@ -5,6 +5,7 @@ public class Main {
         System.out.println(removeAFromStringIteration("baccad"));
         System.out.println(removeAFromStringRecursion("baccad","",0));
         System.out.println(removeAFromStringRecursionInBody("dadabaccad",0));
+        System.out.println(removeAFromStringRecursionUsingSubstring("abhinav",""));
     }
 
 
@@ -34,5 +35,13 @@ public class Main {
         if (str.charAt(index) != 'A' && str.charAt(index) != 'a') stringBuilder.append(str.charAt(index));
         stringBuilder.append(removeAFromStringRecursionInBody(str,index+1));
         return stringBuilder;
+    }
+
+
+    // remove letter a from the string using substring method...
+    private static String removeAFromStringRecursionUsingSubstring(String str,String newString) {
+        if (str.isEmpty() || str.isBlank()) return newString;
+        if (str.charAt(0) != 'A' && str.charAt(0) != 'a') newString = newString + str.charAt(0);
+        return removeAFromStringRecursionUsingSubstring(str.substring(1),newString);
     }
 }
