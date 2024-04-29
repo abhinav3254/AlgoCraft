@@ -1,11 +1,13 @@
-package recursion;
+package recursion.assignments;
 
 import java.util.Arrays;
 
 public class Assignments {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5};
-        sumOfTriangles2(arr,arr.length-1);
+//        int[] arr = {1,2,3,4,5};
+//        sumOfTriangles2(arr,arr.length-1);
+
+        firstUpperCaseInString("geeksforgeeKsA");
     }
 
 
@@ -24,4 +26,17 @@ public class Assignments {
 
     // To solve using iteration is pending... once I will be back I will solve this one
     private static void sumOfTrianglesIteration() {}
+
+
+    // printing the first upper case from the given string...
+    private static void firstUpperCaseInString(String str) {
+        // A --> 65 and B --> 90
+        if (str.isEmpty()) return;
+        int c = str.charAt(0);
+        if (c>=65 && c<=90) {
+            System.out.println((char)c);
+            return;
+        }
+        firstUpperCaseInString(str.substring(1));
+    }
 }
