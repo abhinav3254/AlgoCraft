@@ -1,6 +1,7 @@
 package recursion.assignments;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Assignments {
     public static void main(String[] args) {
@@ -9,7 +10,8 @@ public class Assignments {
 
 //        firstUpperCaseInString("geeksforgeeKsA");
 //        reverseString("abhinav","",6);
-        print1ToN(5);
+//        print1ToN(5);
+        System.out.println(fib(4));
     }
 
 
@@ -63,5 +65,18 @@ public class Assignments {
         }
         System.out.print(n+" ");
         print1ToN(n-1);
+    }
+
+    private static int fib(int n) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        return fibHelper(n,map);
+    }
+
+    // used dp for code optimization
+    private static int fibHelper(int n,HashMap<Integer,Integer> map) {
+        if (map.containsKey(n)) return map.get(n);
+        if (n == 0) return 0; else if (n == 1) return 1;
+        map.put(n,fibHelper(n-1,map)+fibHelper(n-2,map));
+        return map.get(n);
     }
 }
