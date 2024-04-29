@@ -18,6 +18,9 @@ public class Assignments {
 //        System.out.println(productOfTwoNumbers(2,5));
 //        System.out.println(checkPrimeIteration(7));
 //        System.out.println(isPowerOfFour(-2147483648));
+//        System.out.println(factorial(5));
+//        System.out.println(isSortedArray(arr,0));
+//        System.out.println(removeDuplicates("abhhiik",""));
     }
 
 
@@ -119,6 +122,8 @@ public class Assignments {
         return m+productOfTwoNumbers(n-1,m);
     }
 
+
+    // checking is given number is prime or not
     private static boolean checkPrimeIteration(int n) {
         if (n<2) return false;
         for (int i = 2; i < n-1; i++) {
@@ -127,7 +132,28 @@ public class Assignments {
         return true;
     }
 
+    // finding factorial of a number
+    private static int factorial(int n) {
+        if (n == 1) return 1;
+        return n * factorial(n-1);
+    }
 
 
+    // checking is array sorted
+    private static boolean isSortedArray(int[] arr,int index) {
+        if (index == arr.length-1) return true;
+        if (arr[index]>arr[index+1]) return false;
+        return isSortedArray(arr,index+1);
+    }
+
+    // remove duplicates letters from string example :- input :- abhhiik output :- abhik
+    private static String removeDuplicates(String s,String newString) {
+        if (s.length() < 3) return newString+s.charAt(0);
+        newString = newString + s.charAt(0);
+        if (s.charAt(0) == s.charAt(1)) {
+            return removeDuplicates(s.substring(2),newString);
+        }
+        return removeDuplicates(s.substring(1),newString);
+    }
 
 }
