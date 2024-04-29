@@ -8,6 +8,7 @@ public class Assignments {
 //        sumOfTriangles2(arr,arr.length-1);
 
         firstUpperCaseInString("geeksforgeeKsA");
+        reverseString("abhinav","",6);
     }
 
 
@@ -41,5 +42,15 @@ public class Assignments {
             return;
         }
         firstUpperCaseInString(str.substring(1));
+    }
+
+    // reverse string using recursion
+    private static void reverseString(String s,String n,int index) {
+        if (index < 0) {
+            System.out.println(n);
+            return;
+        }
+        n = n + s.charAt(index);
+        reverseString(s,n,index-1);
     }
 }
