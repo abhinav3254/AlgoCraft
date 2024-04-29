@@ -12,7 +12,8 @@ public class Assignments {
 //        reverseString("abhinav","",6);
 //        print1ToN(5);
 //        System.out.println(fib(4));
-        calStringLength("abhinav",0);
+//        calStringLength("abhinav",0);
+        System.out.println(geekonacciSeries(1,3,2,6));
     }
 
 
@@ -89,6 +90,14 @@ public class Assignments {
             return;
         }
         calStringLength(s.substring(1),index+1);
+    }
+
+    // Geek-onacci Number
+    private static int geekonacciSeries(int A,int B,int C,int n) {
+        if (n == 1) return A;
+        if (n == 2) return B;
+        if (n == 3) return C;
+        return geekonacciSeries(A,B,C,n-1)+geekonacciSeries(A,B,C,n-2)+geekonacciSeries(A,B,C,n-3);
     }
 
 }
