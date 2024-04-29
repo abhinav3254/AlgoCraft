@@ -7,8 +7,9 @@ public class Assignments {
 //        int[] arr = {1,2,3,4,5};
 //        sumOfTriangles2(arr,arr.length-1);
 
-        firstUpperCaseInString("geeksforgeeKsA");
-        reverseString("abhinav","",6);
+//        firstUpperCaseInString("geeksforgeeKsA");
+//        reverseString("abhinav","",6);
+        print1ToN(5);
     }
 
 
@@ -52,5 +53,15 @@ public class Assignments {
         }
         n = n + s.charAt(index);
         reverseString(s,n,index-1);
+    }
+
+    // print 1 to N without loop
+    private static void print1ToN(int n) {
+        if (n == 1) {
+            System.out.print(n+" ");
+            return;
+        }
+        System.out.print(n+" ");
+        print1ToN(n-1);
     }
 }
