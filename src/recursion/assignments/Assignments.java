@@ -13,7 +13,11 @@ public class Assignments {
 //        print1ToN(5);
 //        System.out.println(fib(4));
 //        calStringLength("abhinav",0);
-        System.out.println(geekonacciSeries(1,3,2,6));
+//        System.out.println(geekonacciSeries(1,3,2,6));
+//        System.out.println(sumOfDigits(123));
+//        System.out.println(productOfTwoNumbers(2,5));
+//        System.out.println(checkPrimeIteration(7));
+//        System.out.println(isPowerOfFour(-2147483648));
     }
 
 
@@ -99,5 +103,31 @@ public class Assignments {
         if (n == 3) return C;
         return geekonacciSeries(A,B,C,n-1)+geekonacciSeries(A,B,C,n-2)+geekonacciSeries(A,B,C,n-3);
     }
+
+    // sum of digits code
+    private static int sumOfDigits(int n) {
+        if (n<=0) {
+            return 0;
+        }
+        int m = n%10;
+        return m+sumOfDigits(n/10);
+    }
+
+    // product of two numbers
+    private static int productOfTwoNumbers(int n,int m) {
+        if (n == 0) return 0;
+        return m+productOfTwoNumbers(n-1,m);
+    }
+
+    private static boolean checkPrimeIteration(int n) {
+        if (n<2) return false;
+        for (int i = 2; i < n-1; i++) {
+            if (n%i== 0) return false;
+        }
+        return true;
+    }
+
+
+
 
 }
