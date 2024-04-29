@@ -11,7 +11,8 @@ public class Assignments {
 //        firstUpperCaseInString("geeksforgeeKsA");
 //        reverseString("abhinav","",6);
 //        print1ToN(5);
-        System.out.println(fib(4));
+//        System.out.println(fib(4));
+        calStringLength("abhinav",0);
     }
 
 
@@ -79,4 +80,15 @@ public class Assignments {
         map.put(n,fibHelper(n-1,map)+fibHelper(n-2,map));
         return map.get(n);
     }
+
+
+    // calculating length of string using recursion...
+    private static void calStringLength(String s,int index) {
+        if (s.isEmpty()) {
+            System.out.println(index);
+            return;
+        }
+        calStringLength(s.substring(1),index+1);
+    }
+
 }
