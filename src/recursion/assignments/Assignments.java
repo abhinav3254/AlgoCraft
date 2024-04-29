@@ -30,10 +30,13 @@ public class Assignments {
 
     // printing the first upper case from the given string...
     private static void firstUpperCaseInString(String str) {
-        // A --> 65 and B --> 90
+        // A --> 65 and B --> 90 these are ASCII values
         if (str.isEmpty()) return;
         int c = str.charAt(0);
+        // In this range all the numbers are Uppercase
         if (c>=65 && c<=90) {
+            // If number is Upper case then type cast that number to char and print it
+            // then return the function call because we need to get the first upper case only
             System.out.println((char)c);
             return;
         }
