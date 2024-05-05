@@ -7,8 +7,9 @@ public class Maze {
 
     public static void main(String[] args) {
 //        maze(3,3,"");
-        System.out.println(count(3,3));
-        System.out.println(mazeList(3,3,""));
+//        System.out.println(count(3,3));
+//        System.out.println(mazeList(3,3,""));
+        mazeDiagonal(3,3,"");
     }
 
 
@@ -61,5 +62,18 @@ public class Maze {
         }
         left.addAll(right);
         return left;
+    }
+
+//    Diagonal direction movement added...
+    private static void mazeDiagonal(int r,int c,String p) {
+        if (c == 1 && r == 1) {
+            System.out.print(p+" ");
+            return;
+        }
+        if (r>1 && c>1) mazeDiagonal(r-1,c-1,p+'↘');
+        // do right
+        if (c>1) mazeDiagonal(r,c-1,p+'➡');
+        // go down
+        if (r>1) mazeDiagonal(r-1,c,p+'⬇');
     }
 }
