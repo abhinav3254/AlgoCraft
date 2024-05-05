@@ -35,9 +35,9 @@ public class Maze {
             return;
         }
         // do right
-        if (c>1) maze(r,c-1,p+'R');
+        if (c>1) maze(r,c-1,p+'➡');
         // go down
-        if (r>1) maze(r-1,c,p+'D');
+        if (r>1) maze(r-1,c,p+'⬇');
     }
 
     private static List<String> mazeList(int r, int c, String p) {
@@ -51,11 +51,13 @@ public class Maze {
 
         // do right
         if (c>1) {
-            left = mazeList(r,c-1,p+'R');
+//            left = mazeList(r,c-1,p+'R');
+            left = mazeList(r,c-1,p+'➡');
         }
         // go down
         if (r>1) {
-            right = mazeList(r-1,c,p+'D');
+            // right = mazeList(r-1,c,p+'D');
+            right = mazeList(r-1,c,p+'⬇');
         }
         left.addAll(right);
         return left;
