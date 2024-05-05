@@ -1,10 +1,14 @@
 package recursion.backtracking;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Maze {
 
     public static void main(String[] args) {
-        maze(3,3,"");
+//        maze(3,3,"");
         System.out.println(count(3,3));
+        System.out.println(mazeList(3,3,""));
     }
 
 
@@ -34,5 +38,26 @@ public class Maze {
         if (c>1) maze(r,c-1,p+'R');
         // go down
         if (r>1) maze(r-1,c,p+'D');
+    }
+
+    private static List<String> mazeList(int r, int c, String p) {
+        List<String> list = new ArrayList<>();
+        if (c == 1 && r == 1) {
+            list.add(p);
+            return list;
+        }
+        List<String> left = new ArrayList<>();
+        List<String> right = new ArrayList<>();
+
+        // do right
+        if (c>1) {
+            left = mazeList(r,c-1,p+'R');
+        }
+        // go down
+        if (r>1) {
+            right = mazeList(r-1,c,p+'D');
+        }
+        left.addAll(right);
+        return left;
     }
 }
