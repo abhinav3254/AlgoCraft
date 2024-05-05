@@ -2,11 +2,6 @@ package recursion.backtracking;
 
 public class NQueens {
     public static void main(String[] args) {
-//        boolean[][] board = {
-//                {false,false,false},
-//                {false,false,false},
-//                {false,false,false}
-//        };
         int n = 4;
         boolean[][] board = new boolean[n][n];
 //        queens(board,0);
