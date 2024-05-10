@@ -15,45 +15,28 @@ public class Eraser1D {
      * to optimize this we will check if the String contains B or not
      */
     public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        int t = sc.nextInt();
-//        while (t -- >0) {
-//            int n = sc.nextInt();
-//            int k = sc.nextInt();
-//            sc.nextLine();
-//            String string = sc.nextLine();
-//
-////            System.out.println(removeBlack(string,k,n-1,0));
-//            removeBlack("",string,k,n-1,0);
-//
-//        }
-        removeBlack("","BBBBB",5,4,0);
-
+        Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while (t -- >0) {
+			int length = sc.nextInt();
+			int k = sc.nextInt();
+			sc.nextLine();
+			String string  = sc.nextLine();
+			System.out.println(changeAllWhites(string, length, k));
+		}
     }
 
-    private static void removeBlack(String p,String up,int k,int upLength,int count) {
-        if (up.isEmpty()) {
-            System.out.println(count);
-            return;
-        }
-        if (up.charAt(0)=='B') {
-            int length = Math.min(upLength,k);
-            p = p + up.substring(0,length).replaceAll("B","W");
-            removeBlack(p, up.substring(length), k, upLength-(length-1),count+1);
-        } else {
-            removeBlack(p+'W',up.substring(1),k,upLength-1,count);
-        }
-    }
-
-//    private static int removeBlack(String up,int k,int upLength,int count) {
-//        if (up.isEmpty()) {
-//            return 0;
-//        }
-//        if (up.charAt(0)=='B') {
-//            int length = Math.min(upLength,k);
-//            return 1 + removeBlack(up.substring(length), k, upLength-(length-1),count+1);
-//        } else {
-//            return removeBlack(up.substring(1),k,upLength-1,count);
-//        }
-//    }
+    // Here issue is TLE
+    private static int changeAllWhites(String p,int remaining,int k) {
+		if (p.isEmpty()) return 0;
+		if (remaining<k && p.charAt(0) == 'B') {
+			return 1;
+		} else {
+			if (p.charAt(0) == 'B') {
+				return 1 + changeAllWhites(p.substring(k), remaining-k, k);
+			} else {
+				return changeAllWhites(p.substring(1), remaining-1, k);
+			}
+		}
+	}
 }
