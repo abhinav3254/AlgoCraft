@@ -1,5 +1,7 @@
 package practise;
 
+
+// This question is basically how many elephants we can place on n x n square matrix
 public class NElephant {
     public static void main(String[] args) {
         boolean[][] arr = {
