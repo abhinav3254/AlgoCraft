@@ -6,7 +6,7 @@ import java.util.HashSet;
 
 
 // 100313. Find the Number of Distinct Colors Among the Balls
-// easy need to do later after tournament, right now I have some other work that's why I need to go...
+// easy need to do later after tournament; right now I have some other work that's why I need to go...
 // solved this one as well
 public class Distinct {
 
