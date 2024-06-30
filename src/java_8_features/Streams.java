@@ -26,5 +26,9 @@ public class Streams {
                 .sorted()
                 .forEach(System.out::println);
 
+
+        System.out.println("-----For each----");
+        names.forEach(System.out::println);
+
     }
 }
