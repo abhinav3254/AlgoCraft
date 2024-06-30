@@ -1,10 +1,10 @@
-package lambda;
+package java_8_features;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class One {
+public class Lambda {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
