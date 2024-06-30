@@ -24,7 +24,7 @@ public class Streams {
         names.stream()
                 .filter(p->p.startsWith("A"))
                 .sorted()
-                .forEach(name-> System.out.println(name));
+                .forEach(System.out::println);
 
     }
 }
