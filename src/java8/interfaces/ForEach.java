@@ -1,4 +1,4 @@
-package interfaces;
+package java8.interfaces;
 
 import java.util.Arrays;
 import java.util.List;

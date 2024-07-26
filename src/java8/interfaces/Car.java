@@ -1,4 +1,4 @@
-package interfaces;
+package java8.interfaces;
 
 public class Car implements Vehicle{
     @Override
